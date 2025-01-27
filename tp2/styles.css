@@ -1,0 +1,58 @@
+@font-face {
+  font-family: Voor;
+  src: url("VoorReg.otf");
+}
+
+body {
+  color: darkgreen;
+  font-family: Voor, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Voor, serif;
+}
+
+ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: upper-roman;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+section {
+  border-left: 3px solid navy;
+  background-color: hsl(240, 100%, 98%);
+  padding: 1em;
+  margin: 2em;
+  border-radius: 50px 0 0 0;
+}
+
+nav {
+  background-color: hsl(60, 100%, 90%);
+  padding: 1em;
+  margin: 2em;
+  border-radius: 50px 0 0 0;
+}
+
+math:hover {
+  color: red;
+}
+
+math:hover mi:first-of-type {
+  color: blue;
+}
+
+math:hover mn:first-of-type {
+  color: black;
+}
