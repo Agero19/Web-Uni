@@ -8,7 +8,7 @@ body {
 
 #contenu {
   background-color: white;
-  margin-left: 30em;
+  margin-left: 200px;
   padding: 1em;
 }
 
@@ -55,6 +55,19 @@ h1 {
 h2 {
   margin-top: 0.5em;
   margin-bottom: 0.17em;
+  font-weight: 400;
+  padding-bottom: 3px;
+}
+
+#contenu > h2 {
+  border-bottom: 1px solid #aaaaaa;
+  display: flex;
+  padding-right: 20px;
+}
+
+#contenu h3 {
+  border-bottom: 1px dotted #aaaaaa;
+  display: flex;
 }
 
 h3 {
@@ -89,14 +102,40 @@ ul {
   line-height: 150%;
 }
 
+#categories {
+  display: flex;
+  align-items: baseline;
+  border: 1px solid #aaaaaa;
+}
+
 #categories ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+}
+
+#categories ul li::before {
+  content: "";
+  width: 1px;
+  height: 20px;
+  background-color: #aaaaaa;
+  display: inline-block;
+  color: #aaaaaa;
+  position: absolute;
+  left: 0px;
+}
+
+#categories ul li:first-child::before {
+  display: none;
 }
 
 #categories li {
   padding: 0.4em;
   padding-left: 0.2em;
+  display: block;
+  position: relative;
+  padding-left: 9px;
 }
 
 /* Navigation Menu */
@@ -104,7 +143,7 @@ ul {
   position: absolute;
   top: 0;
   left: 0;
-  width: 10em;
+  width: 200px;
   font-size: 75%;
 }
 
@@ -178,4 +217,15 @@ ul {
 #sommaire h2 {
   text-align: center;
   font-size: 100%;
+  font-weight: 700;
+}
+
+#carte {
+  position: relative;
+}
+
+#pointrouge {
+  position: absolute;
+  top: 37px;
+  left: 86px;
 }
