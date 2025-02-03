@@ -1,0 +1,181 @@
+/* General Styles */
+body {
+  background-color: #f3f3f3;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#contenu {
+  background-color: white;
+  margin-left: 30em;
+  padding: 1em;
+}
+
+/* Table Styles */
+table.infobox {
+  float: right;
+  width: 300px;
+  border: 1px solid #aaaaaa;
+  border-collapse: separate;
+  border-spacing: 7px;
+  margin-bottom: 0.5em;
+  margin-left: 1em;
+  background-color: #f9f9f9;
+  font-size: 90%;
+  line-height: 110%;
+  /* clear: right; */
+}
+
+table.infobox th:nth-last-child(2n + 1) {
+  background-color: #b4464b;
+  color: white;
+  padding: 0.1em;
+}
+
+table.infobox td {
+  padding: 0.1em;
+}
+
+table.infobox tr:first-child th {
+  font-size: 150%;
+  height: 45px;
+  background-image: url("livre.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Headings */
+h1 {
+  font-size: 160%;
+  border-bottom: 1px solid #aaaaaa;
+  font-weight: 500;
+}
+
+h2 {
+  margin-top: 0.5em;
+  margin-bottom: 0.17em;
+}
+
+h3 {
+  font-size: 132%;
+}
+
+/* Links */
+a {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #0b0080;
+}
+
+a.externe {
+  color: #3366bb;
+  padding-right: 13px;
+  background-image: url("externe.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+a.externe:visited {
+  color: #663366;
+}
+
+/* Lists */
+ul {
+  list-style-image: url("puce.png");
+  line-height: 150%;
+}
+
+#categories ul {
+  margin: 0;
+  padding: 0;
+}
+
+#categories li {
+  padding: 0.4em;
+  padding-left: 0.2em;
+}
+
+/* Navigation Menu */
+#navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10em;
+  font-size: 75%;
+}
+
+#navigation h3 {
+  font-size: 75%;
+  margin: 1em 0 0.5em 0em;
+  padding-left: 1.75em;
+  color: #444444;
+}
+
+#navigation ul {
+  margin: 0;
+  padding-left: 1.75em;
+  margin-left: 0;
+  line-height: 150%;
+  list-style: none;
+}
+
+#navigation.menu {
+  width: 10em;
+}
+
+/* Photo Block */
+.bloc_photo {
+  width: 222px;
+  background-color: #f9f9f9;
+  border: 1px solid #cccccc;
+  padding: 3px;
+  margin: 0.5em 1.4em 1.3em 0;
+  float: right;
+  clear: right;
+}
+
+.bloc_photo p {
+  margin: 0;
+}
+
+/* Coordinates */
+#coordonnees {
+  font-size: 90%;
+  float: right;
+}
+
+/* Miscellaneous */
+#bloc_principal {
+  font-size: 80%;
+  line-height: 150%;
+}
+
+#carte {
+  font-size: 80%;
+}
+
+#categories {
+  background-color: #f9f9f9;
+  padding: 5px;
+}
+
+#sommaire {
+  background-color: #f9f9f9;
+  width: 30em;
+  border: 1px solid #aaaaaa;
+}
+
+#sommaire ul {
+  margin-left: 0;
+  padding-left: 1em;
+  list-style: none;
+}
+
+#sommaire h2 {
+  text-align: center;
+  font-size: 100%;
+}
