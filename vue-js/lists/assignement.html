@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="h-full"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>School Tracker</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-full grid place-items-center">
+    <div id="app">
+      <h2 class="font-bold mb-2">Assignements</h2>
+      <ul>
+        <li>Turn on Homework <input type="checkbox" /></li>
+        <li>Finish project <input type="checkbox" /></li>
+        <li>Read chapter 4 <input type="checkbox" /></li>
+      </ul>
+    </div>
+    <script>
+      let app = {
+        data() {
+          assignements: [
+            { name: "Finish project", isDone: false },
+            { name: "Read chapter 4", isDone: false },
+            { name: "Turn on Homework", isDone: false },
+          ];
+        },
+      };
+      Vue.createApp(app).mount("#app");
+    </script>
+  </body>
+</html>
