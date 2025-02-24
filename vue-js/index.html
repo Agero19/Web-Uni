@@ -8,66 +8,15 @@
     />
     <title>Vue3 Guide</title>
     <script src="https://unpkg.com/vue@3"></script>
-    <style>
-      html,
-      body {
-        height: 100%;
-      }
-
-      body {
-        display: grid;
-        place-items: center;
-      }
-
-      .text-red {
-        color: red;
-      }
-
-      .text-green {
-        color: green;
-      }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div id="app">
-      <p>
-        <input
-          type="text"
-          v-model="greeting"
-        />
-      </p>
-
-      <p>{{ greeting}} {{greeting.length}}</p>
-
-      <button
-        :class="active ? 'text-red' : 'text-green'"
-        @click="toggle"
-      >
-        Click me!
-      </button>
-    </div>
+  <body class="h-full grid place-items-center">
+    <div id="app"></div>
 
     <script>
-      Vue.createApp({
-        data() {
-          return {
-            greeting: "Hello Vue3!",
-            active: true,
-          };
-        },
+      let app = {};
 
-        mounted() {
-          setTimeout(() => {
-            this.greeting = "Hello World!";
-          }, 3000);
-        },
-
-        methods: {
-          toggle() {
-            this.active = !this.active;
-          },
-        },
-      }).mount("#app");
+      Vue.createApp(app).mount("#app");
     </script>
   </body>
 </html>
