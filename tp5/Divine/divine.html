@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Jeu Devine le Nombre</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <style></style>
+  </head>
+  <body>
+    <h1>Jeu Devine le Nombre</h1>
+
+    <div class="game-container">
+      <div id="setup-screen">
+        <h2>Configuration du jeu</h2>
+        <div class="range-selection">
+          <div class="input-group">
+            <label for="min-value">Valeur minimale</label>
+            <input
+              type="number"
+              id="min-value"
+              value="0"
+              min="0"
+            />
+          </div>
+          <div class="input-group">
+            <label for="max-value">Valeur maximale</label>
+            <input
+              type="number"
+              id="max-value"
+              value="100"
+              min="1"
+            />
+          </div>
+        </div>
+        <button
+          id="start-game"
+          class="btn-primary"
+        >
+          Commencer le jeu
+        </button>
+      </div>
+
+      <div
+        id="game-screen"
+        class="hidden"
+      >
+        <h2>Devinez le nombre</h2>
+        <p id="range-info">
+          Je pense à un nombre entre <span id="current-min">0</span> et
+          <span id="current-max">100</span>.
+        </p>
+
+        <div class="counter">Tentatives: <span id="attempts">0</span></div>
+
+        <div
+          id="feedback"
+          class="game-feedback hidden"
+        ></div>
+
+        <div class="guess-container">
+          <div class="input-group guess-input">
+            <label for="guess">Votre proposition</label>
+            <input
+              type="number"
+              id="guess"
+              placeholder="Entrez un nombre"
+            />
+          </div>
+          <button
+            id="submit-guess"
+            class="btn-primary"
+          >
+            Proposer
+          </button>
+        </div>
+
+        <div class="buttons">
+          <button
+            id="new-game"
+            class="btn-secondary"
+          >
+            Nouvelle partie
+          </button>
+          <button
+            id="quit-game"
+            class="btn-danger"
+          >
+            Quitter la partie
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="result-screen"
+        class="hidden"
+      >
+        <h2>Félicitations !</h2>
+        <p id="result-message"></p>
+        <div class="buttons">
+          <button
+            id="play-again"
+            class="btn-primary"
+          >
+            Rejouer
+          </button>
+          <button
+            id="change-range"
+            class="btn-secondary"
+          >
+            Changer l'intervalle
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-container">
+      <h2>Meilleurs scores</h2>
+      <p>Les 5 meilleurs scores pour l'intervalle actuel:</p>
+      <table class="scores-table">
+        <thead>
+          <tr>
+            <th>Rang</th>
+            <th>Tentatives</th>
+            <th>Intervalle</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="high-scores">
+          <tr>
+            <td colspan="4">Aucun score enregistré</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
