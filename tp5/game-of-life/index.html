@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Jeu de la Vie</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Jeu de la Vie</h1>
+      <p class="description">
+        Le "Jeu de la Vie" est un automate cellulaire imaginé par John Conway en
+        1970. Ce n'est pas un jeu au sens traditionnel, mais une simulation
+        basée sur quelques règles simples : une cellule survit si elle a 2 ou 3
+        voisines vivantes, elle naît si elle a exactement 3 voisines vivantes,
+        et meurt dans tous les autres cas.
+      </p>
+    </header>
+
+    <div class="container">
+      <div class="controls">
+        <button
+          id="startBtn"
+          class="btn-primary"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          Démarrer
+        </button>
+        <button
+          id="pauseBtn"
+          class="btn-secondary"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect
+              x="6"
+              y="4"
+              width="4"
+              height="16"
+            ></rect>
+            <rect
+              x="14"
+              y="4"
+              width="4"
+              height="16"
+            ></rect>
+          </svg>
+          Pause
+        </button>
+        <button
+          id="resetBtn"
+          class="btn-secondary"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 2v6h6"></path>
+            <path d="M21 12A9 9 0 0 0 6 5.3L3 8"></path>
+            <path d="M21 22v-6h-6"></path>
+            <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"></path>
+          </svg>
+          Réinitialiser
+        </button>
+        <button
+          id="randomBtn"
+          class="btn-accent"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle
+              cx="9"
+              cy="7"
+              r="4"
+            ></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          Population Aléatoire
+        </button>
+      </div>
+
+      <div class="settings">
+        <div class="setting-group">
+          <label for="gridSize">Taille de la grille:</label>
+          <input
+            type="number"
+            id="gridSize"
+            min="10"
+            max="100"
+            value="30"
+          />
+        </div>
+        <div class="setting-group">
+          <label for="speed">Vitesse:</label>
+          <input
+            type="number"
+            id="speed"
+            min="1"
+            max="20"
+            value="5"
+          />
+        </div>
+      </div>
+
+      <div id="jeuDeLaVie"></div>
+
+      <div class="counter">Génération: <span id="generation">0</span></div>
+
+      <p
+        class="status"
+        id="status"
+      >
+        Cliquez sur les cellules pour les activer/désactiver
+      </p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
