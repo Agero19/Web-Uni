@@ -40,8 +40,6 @@ class DevineJeu {
 
     // Initialisation des événements
     this.initEventListeners();
-
-    // Afficher les scores
     this.updateHighScores();
   }
 
@@ -55,7 +53,6 @@ class DevineJeu {
       this.showSetupScreen()
     );
 
-    // Permettre d'utiliser Entrée pour soumettre une proposition
     this.guessInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
         this.checkGuess();
@@ -111,12 +108,10 @@ class DevineJeu {
   }
 
   startNewGame() {
-    // Garder le même intervalle
     this.targetNumber = nbAlea(this.min, this.max);
     this.attempts = 0;
     this.isPlaying = true;
 
-    // Mettre à jour l'interface
     this.attemptsElement.textContent = this.attempts;
     this.feedbackElement.classList.add("hidden");
     this.guessInput.value = "";
@@ -149,22 +144,19 @@ class DevineJeu {
 
     if (guess < this.targetNumber) {
       this.feedbackElement.textContent = `Le nombre à deviner est plus grand que ${guess}.`;
-      this.feedbackElement.style.backgroundColor = "#fef3c7"; // Yellow background
+      this.feedbackElement.style.backgroundColor = "#fef3c7";
     } else if (guess > this.targetNumber) {
       this.feedbackElement.textContent = `Le nombre à deviner est plus petit que ${guess}.`;
-      this.feedbackElement.style.backgroundColor = "#fef3c7"; // Yellow background
+      this.feedbackElement.style.backgroundColor = "#fef3c7";
     } else {
-      // Nombre trouvé
       this.isPlaying = false;
       this.feedbackElement.textContent = `Bravo ! Vous avez trouvé le nombre ${
         this.targetNumber
       } en ${this.attempts} tentative${this.attempts > 1 ? "s" : ""}.`;
-      this.feedbackElement.style.backgroundColor = "#d1fae5"; // Green background
+      this.feedbackElement.style.backgroundColor = "#d1fae5";
 
-      // Enregistrer le score
       this.saveScore();
 
-      // Afficher l'écran de résultat après une courte pause
       setTimeout(() => {
         this.resultMessageElement.textContent = `Vous avez trouvé le nombre ${
           this.targetNumber
@@ -183,17 +175,11 @@ class DevineJeu {
       range: `${this.min} - ${this.max}`,
       date: new Date().toLocaleDateString(),
     };
-
-    // Ajouter le score à la liste
     this.highScores.push(score);
 
     // Trier par nombre de tentatives (croissant)
     this.highScores.sort((a, b) => a.attempts - b.attempts);
-
-    // Sauvegarder dans le localStorage
     localStorage.setItem("highScores", JSON.stringify(this.highScores));
-
-    // Mettre à jour l'affichage
     this.updateHighScores();
   }
 
@@ -205,9 +191,7 @@ class DevineJeu {
     }
 
     let html = "";
-    // Afficher les 5 meilleurs scores
     const topScores = this.highScores.slice(0, 5);
-
     topScores.forEach((score, index) => {
       html += `
                     <tr>
